@@ -7,10 +7,10 @@ export const Header = () => {
     return (
         <header>
             <h1>BIT USERS</h1>
-            <div class="header-nav">
+            <div className="header-nav">
                 <span><Link to={`/`}>Home</Link></span>
                 <span><Link to={`/`}>Users</Link></span>
-                <span><Link to={`/`}>Single User</Link></span>
+                <span><Link to={`/`}>Create User</Link></span>
             </div>
         </header>
     )

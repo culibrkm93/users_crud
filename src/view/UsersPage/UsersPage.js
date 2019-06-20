@@ -1,7 +1,8 @@
 import React from 'react'
-import { fetchUsers } from '../../service/fetchusers'
+import { fetchUsers } from '../../service/fetchusers';
+import { Link } from 'react-router-dom'
 
-export class UserPage extends React.Component {
+export class UsersPage extends React.Component {
 
     constructor(props) {
         super(props)
@@ -38,12 +39,13 @@ export class UserPage extends React.Component {
                         <td>City</td>
                     </tr>
                     {users.map((user, i) => {
-                        return (< tr key={i} >
-                            <td>{user.id}</td>
-                            <td>{user.name}</td>
-                            <td>{user.email}</td>
-                            <td>{user.city}</td>
-                        </tr>)
+                        return (
+                            < tr key={i} >
+                                <td>{user.id}</td>
+                                <td><Link to={`/users/${user.id}`}>{user.name}</Link></td>
+                                <td>{user.email}</td>
+                                <td>{user.city}</td>
+                            </tr>)
                     })}
                 </tbody>
             </table>

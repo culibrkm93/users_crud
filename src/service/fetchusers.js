@@ -11,6 +11,16 @@ const fetchUsers = () => {
         })
 }
 
+const fetchSingleUser = (userId) => {
+    return axios.get(`https://jsonplaceholder.typicode.com/users/${userId}`)
+        .then(response => response.data)
+        .then(user => {
+            return new User(user)
+
+        })
+}
+
 export {
-    fetchUsers
+    fetchUsers,
+    fetchSingleUser
 }
