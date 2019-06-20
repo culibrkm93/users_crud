@@ -1,7 +1,22 @@
 header{
-    text-align: center;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
   }
+
   header h1{
     margin: 10px;
     font-size: 35px;
+  }
+  .header-nav {
+    margin-top: 18px;
+  }
+
+  header span {
+    margin-right: 40px;
+    
+  }
+  header span:last-child {
+    margin-right: 250px;
+    
   }
