@@ -11,25 +11,27 @@ export const CreateForm = (props) => {
             <label >Name:
                 <input
                     type="text"
-                    name="userName"
+                    name="name"
                     placeholder="Name"
                     value={`${props.userName}`}
                     onChange={props.onChange}
                 />
             </label>
+            <p>{props.errors.name}</p>
 
-            {/* {props.errorMessage} */}
+
             <label>Email:
                 <input
                     type="text"
-                    name="userEmail"
+                    name="email"
                     placeholder="email"
                     value={`${props.userEmail}`}
                     onChange={props.onChange}
                 />
             </label>
+            <p>{props.errors.email}</p>
 
-            {props.errors.map((error, i) => <p key={i}>{error}</p>)}
+
 
             <input type="submit" value="Create" />
         </form>

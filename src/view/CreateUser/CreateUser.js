@@ -6,9 +6,9 @@ export class CreateUser extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            userName: "",
-            userEmail: "",
-            errors: [],
+            name: "",
+            email: "",
+            errors: {},
 
         }
         this.onFormSubmit = this.onFormSubmit.bind(this);
@@ -16,49 +16,57 @@ export class CreateUser extends React.Component {
 
 
     onChange = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+
+        const { errors } = this.state;
+        delete errors[name]
         this.setState({
-            [e.target.name]: e.target.value
+            [name]: value,
+            errors
         });
     }
 
     isFormValid() {
-        const { userEmail, userName } = this.state;
+        const { name, email } = this.state;
 
-        let errors = [];
-        if (userName.length < 3 || userName.length > 30) {
-            errors.push("Name length is invalid!");
+        let errors = {};
+        if (name.length < 3 || name.length > 30) {
+            errors.name = "Name value is invalid!";
         }
 
-        if (userEmail.length < 3 || userEmail.length > 30 || userEmail.includes("@") === false) {
-            errors.push("Email value is invalid!");
+        if (!email.includes("@")) {
+            errors.email = "Email value is invalid!";
         }
 
-        return errors;
+        const hasErrors = Object.keys(errors).length;
+        if (hasErrors) {
+            this.setState({ errors });
+        }
+
+        return !hasErrors;
     }
 
     onFormSubmit() {
-        const errors = this.isFormValid();
-        if (errors.length) {
-            this.setState({ errors });
+        if (!this.isFormValid()) {
             return;
-        } else {
-            this.setState({ errors: [] });
         }
 
-        console.log(errors);
+
         console.log('submitting');
 
     }
 
     render() {
-        const { userName, userEmail, errors } = this.state;
+        const { name, email, errors } = this.state;
+        const { onChange, onFormSubmit } = this;
 
         return (
             <CreateForm
-                userName={userName}
-                userEmail={userEmail}
-                onChange={this.onChange}
-                onFormSubmit={this.onFormSubmit}
+                userName={name}
+                userEmail={email}
+                onChange={onChange}
+                onFormSubmit={onFormSubmit}
                 errors={errors}
             />
         )
