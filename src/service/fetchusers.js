@@ -20,8 +20,11 @@ const fetchSingleUser = (userId) => {
         })
 }
 
-const createUserRequest = (payload) => {
-    return axios.post(`https://jsonplaceholder.typicode.com/users`)
+const createUserRequest = (user) => {
+    return axios.post(`https://jsonplaceholder.typicode.com/users`, {
+        name: user.name,
+        email: user.email
+    })
 
 }
 

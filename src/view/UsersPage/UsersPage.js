@@ -31,25 +31,31 @@ export class UsersPage extends React.Component {
         const { users } = this.state;
 
         return (
-            <table>
-                <tbody>
-                    <tr className="table-header">
-                        <td><b>ID</b></td>
-                        <td><b>Name</b></td>
-                        <td><b>Email</b></td>
-                        <td><b>City</b></td>
-                    </tr>
-                    {users.map((user, i) => {
-                        return (
-                            < tr key={i} className="user-cells">
-                                <td>{user.id}</td>
-                                <td><Link to={`/users/${user.id}`}>{user.name}</Link></td>
-                                <td>{user.email}</td>
-                                <td>{user.city}</td>
-                            </tr>)
-                    })}
-                </tbody>
-            </table>
+            <>
+                <table>
+                    <tbody>
+                        <tr className="table-header">
+                            <td><b>ID</b></td>
+                            <td><b>Name</b></td>
+                            <td><b>Email</b></td>
+                            <td><b>City</b></td>
+                        </tr>
+                        {users.map((user, i) => {
+                            return (
+                                < tr key={i} className="user-cells">
+                                    <td>{user.id}</td>
+                                    <td><Link to={`/users/${user.id}`}>{user.name}</Link></td>
+                                    <td>{user.email}</td>
+                                    <td>{user.city}</td>
+                                </tr>)
+                        })}
+                    </tbody>
+                </table>
+                <Link to='users/create'>
+                    <button>Create User</button>
+                </Link>
+            </>
+
         )
 
     }

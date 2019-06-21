@@ -1,6 +1,7 @@
 import React from 'react';
 import './CreateUser.css'
 import { CreateForm } from './CreateForm';
+import { createUserRequest } from '../../service/fetchusers'
 
 export class CreateUser extends React.Component {
     constructor(props) {
@@ -52,8 +53,16 @@ export class CreateUser extends React.Component {
             return;
         }
 
+        const { name, email } = this.state
 
-        console.log('submitting');
+        createUserRequest({ name: name, email: email })
+            .then((res) => {
+                if (res.status === 201) {
+                    this.props.history.push('/users')
+                }
+            })
+
+
 
     }
 
