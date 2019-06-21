@@ -1,6 +1,11 @@
 footer {
     text-align: center;
+  background-color: #DE497A;
+
 }
 footer p{
+    color: #2E3F51;
     margin: 5px;
+  background-color: #DE497A;
+
 }

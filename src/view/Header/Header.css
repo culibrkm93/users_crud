@@ -1,22 +1,40 @@
+
 header{
+  background-color: #DE497A;
     text-align: left;
     display: flex;
     justify-content: space-between;
+    color: #2E3F51;
   }
-
+  
   header h1{
-    margin: 10px;
+    margin: 10px 0 10px 100px;
     font-size: 35px;
+    background-color: #DE497A;
   }
   .header-nav {
-    margin-top: 18px;
+    background-color: #DE497A;
+    margin-top: 14px;
   }
-
+  
   header span {
+    background-color: #DE497A;
     margin-right: 40px;
     
   }
   header span:last-child {
     margin-right: 250px;
     
+  }
+
+  span a:active,
+  span a:visited,
+  span a:link{
+    font-size: 20px;
+    text-decoration: none;
+    color: #2E3F51;
+  }
+  span a:hover{
+    color:white;
+    background-color: #;
   }

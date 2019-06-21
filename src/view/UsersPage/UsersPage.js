@@ -1,6 +1,7 @@
 import React from 'react'
 import { fetchUsers } from '../../service/fetchusers';
 import { Link } from 'react-router-dom'
+import './UsersPage.css'
 
 export class UsersPage extends React.Component {
 
@@ -32,15 +33,15 @@ export class UsersPage extends React.Component {
         return (
             <table>
                 <tbody>
-                    <tr>
-                        <td>Id</td>
-                        <td>Name</td>
-                        <td>Email</td>
-                        <td>City</td>
+                    <tr className="table-header">
+                        <td><b>ID</b></td>
+                        <td><b>Name</b></td>
+                        <td><b>Email</b></td>
+                        <td><b>City</b></td>
                     </tr>
                     {users.map((user, i) => {
                         return (
-                            < tr key={i} >
+                            < tr key={i} className="user-cells">
                                 <td>{user.id}</td>
                                 <td><Link to={`/users/${user.id}`}>{user.name}</Link></td>
                                 <td>{user.email}</td>

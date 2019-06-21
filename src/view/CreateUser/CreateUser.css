@@ -1,0 +1,17 @@
+*{
+    background-color: #E6D8D4;
+}
+.user-form{
+    padding-top: 200px;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.user-form label{
+    font-size: 25px;
+    color: #19BE9C;
+}
+.user-form input::placeholder{
+    font-size: 18px;
+    color: #61E786;
+}

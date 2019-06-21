@@ -9,8 +9,8 @@ export const Header = () => {
             <h1>BIT USERS</h1>
             <div className="header-nav">
                 <span><Link to={`/`}>Home</Link></span>
-                <span><Link to={`/`}>Users</Link></span>
-                <span><Link to={`/`}>Create User</Link></span>
+                <span><Link to={`/users`}>Users</Link></span>
+                <span><Link to={`/users/create`}>Create User</Link></span>
             </div>
         </header>
     )

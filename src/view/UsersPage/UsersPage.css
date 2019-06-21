@@ -1,0 +1,11 @@
+.user-cells td{
+    font-size: 25px;
+    color: #19BE9C;
+}
+
+.user-cells td a{
+    color: #19BE9C;
+}
+.user-cells td a:hover{
+    color: #61E786;
+}
