@@ -28,8 +28,16 @@ const createUserRequest = (user) => {
 
 }
 
+const deleteRequest = (userId, user) => {
+    return axios.delete(`https://jsonplaceholder.typicode.com/users/${userId}`, {
+        name: user.name,
+        email: user.email
+    })
+}
+
 export {
     fetchUsers,
     fetchSingleUser,
-    createUserRequest
+    createUserRequest,
+    deleteRequest
 }

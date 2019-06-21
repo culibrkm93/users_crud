@@ -1,5 +1,7 @@
 import React from 'react';
 import { fetchSingleUser } from '../../service/fetchusers';
+import { deleteRequest } from '../../service/fetchusers';
+import { SingleUserForm } from './SingleUserForm';
 
 export class SingleUserPage extends React.Component {
 
@@ -22,6 +24,11 @@ export class SingleUserPage extends React.Component {
         this.loadSingleUser(userId)
     }
 
+    onButtonClick = (e) => {
+        const userId = this.props.match.params.id;
+        deleteRequest(userId, this.state.user)
+    }
+
 
     render() {
         const { user } = this.state;
@@ -29,10 +36,7 @@ export class SingleUserPage extends React.Component {
             return <p>Loading...</p>
         }
         return (
-            <div>
-                <h1>{user.name}</h1>
-                <p>{user.city}</p>
-            </div>
+            <SingleUserForm name={user.name} email={user.email} onButtonClick={this.onButtonClick} />
 
         )
     }
